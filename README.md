@@ -20,10 +20,49 @@ The exercise also demonstrated how incident handling follows the structured life
 # INSTALLATION & DATA PREPARATION
 <div  align="justify">
 Splunk Enterprise was installed using the official Splunk website to ensure software authenticity and security. An account was first created on the Splunk platform to enable access to licensed downloads. Then, Splunk Enterprise was downloaded and installed on a Windows-based system to simulate a SOC analyst workstation environment. During installation, an administrator account was configured to support secure access and accountability, which aligns with SOC operational practices. Successful installation was verified by accessing the Splunk web interface and confirming that the Splunk service was running correctly.
-<br/><br/>
+<p align="center">
+  <img src="PICTURE/Splunk_Platform_Registration" width="600">
+  <br>
+  <strong>Figure 1:</strong> Splunk Platform Registration
+</p>
+<p align="center">
+   <img src="PICTURE/image.png"  width="600">
+  <br>
+  <strong>Figure 2:</strong> Splunk Enterprise Installation Package
+</p>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 215348.png" width="600">
+  <br>
+  <strong>Figure 3:</strong> Splunk Web Interface
+</p>
+ 
 Additionally, the Splunk Universal Forwarder was downloaded and installed as a core SOC data collection component, allowing logs from endpoint and server systems to be securely forwarded to the central SIEM platform. 
-<br/><br/>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 211722.png" width="600">
+  <br>
+  <strong>Figure 4:</strong> Splunk Universal Forwarder Downloader
+</p>
 After downloading the BOTSv3 dataset from the official Splunk GitHub repository (https://github.com/splunk/botsv3), the data was extracted and placed into the Splunk apps directory at (C:\Program Files\Splunk\etc\apps). Following extraction, the Splunk Enterprise service was restarted via the Server Controls panel. Dataset validation was then performed by executing test searches using “index=botsv3” to confirm that the data was successfully ingested. 
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 211913.png" width="600">
+  <br>
+  <strong>Figure 5:</strong> Download Dataset from GitHub Repository
+</p>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 225406.png" width="600">
+  <br>
+  <strong>Figure 6:</strong> Extract Data Into C Drive
+</p>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 215942.png" width="600">
+  <br>
+  <strong>Figure 7:</strong> Restart Splunk via Server Control Panel
+</p>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 220354.png" width="600">
+  <br>
+  <strong>Figure 8:</strong> Dataset Validation
+</p>
 <br/><br/>
 
 ### JUSTIFICATION OF SETUP CHOICES
@@ -38,3 +77,4 @@ Extracting the BOTSv3 dataset into the Splunk apps directory allows Splunk to au
 5.	Service Restart and Validation
 Restarting Splunk after dataset placement ensures the platform fully recognises the app and ingested logs. Validation through test searches confirms that data is correctly indexed, timestamps are accurate, and fields are available for correlation. This step reflects SOC best practices, where verified and reliable data is essential for operational readiness and accurate incident response.
 </div>
+>
