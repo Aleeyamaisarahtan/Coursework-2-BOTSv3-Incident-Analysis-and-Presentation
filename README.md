@@ -65,14 +65,14 @@ After downloading the BOTSv3 dataset from the official Splunk GitHub repository 
 </p>
 
 ### JUSTIFICATION OF SETUP CHOICES
-1.	Splunk Enterprise Installation
+1.	Splunk Enterprise Installation:
 Installing Splunk Enterprise on a Windows-based system provides a stable and supported environment for a SOC analyst workstation. Splunk is widely used in industry SOCs for centralising and correlating security logs, making it ideal for monitoring, detecting, and investigating incidents. Using the official Splunk website ensures software authenticity and mitigates the risk of compromised or malicious software entering the SOC environment.
-2.	Administrator Account Configuration
+2.	Administrator Account Configuration:
 Creating and configuring an administrator account enforces access control and accountability, which are critical in a SOC. Only authorised personnel can modify configurations, create indexes, or ingest data, preventing unauthorised changes that could compromise security monitoring and incident analysis.
-3.	Universal Forwarder Installation
+3.	Universal Forwarder Installation:
 The Universal Forwarder was installed to simulate real-world SOC architecture, where logs are collected from distributed endpoints and servers and securely forwarded to a central SIEM platform. This ensures all relevant data is aggregated for monitoring and correlation, reflecting standard SOC operations.
-4.	Dataset Placement and Ingestion
+4.	Dataset Placement and Ingestion:
 Extracting the BOTSv3 dataset into the Splunk apps directory allows Splunk to automatically recognise it as an app, enabling indexing, source type assignment, and access to pre-configured dashboards. This mirrors SOC practices where structured, centralised log data is necessary for timely threat detection and investigation.
-5.	Service Restart and Validation
+5.	Service Restart and Validation:
 Restarting Splunk after dataset placement ensures the platform fully recognises the app and ingested logs. Validation through test searches confirms that data is correctly indexed, timestamps are accurate, and fields are available for correlation. This step reflects SOC best practices, where verified and reliable data is essential for operational readiness and accurate incident response.
 </div>
