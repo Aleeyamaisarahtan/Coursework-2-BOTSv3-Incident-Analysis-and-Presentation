@@ -63,7 +63,6 @@ After downloading the BOTSv3 dataset from the official Splunk GitHub repository 
   <br>
   <strong>Figure 8:</strong> Dataset Validation
 </p>
-<br/><br/>
 
 ### JUSTIFICATION OF SETUP CHOICES
 1.	Splunk Enterprise Installation
