@@ -76,4 +76,3 @@ Extracting the BOTSv3 dataset into the Splunk apps directory allows Splunk to au
 5.	Service Restart and Validation
 Restarting Splunk after dataset placement ensures the platform fully recognises the app and ingested logs. Validation through test searches confirms that data is correctly indexed, timestamps are accurate, and fields are available for correlation. This step reflects SOC best practices, where verified and reliable data is essential for operational readiness and accurate incident response.
 </div>
->
