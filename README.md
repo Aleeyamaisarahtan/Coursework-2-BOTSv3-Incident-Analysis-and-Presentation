@@ -16,3 +16,25 @@ During the BOTSv3 exercise, the structure and responsibilities of a Security Ope
 The exercise also demonstrated how incident handling follows the structured lifecycle of prevention, detection, response, and recovery. Preventive measures, such as secure configurations and access controls, reduced the likelihood of successful attacks. Detection relied on monitoring tools and alert systems, which in BOTSv3 were simulated through suspicious traffic alerts and log anomalies, emphasising the need for rapid identification. The response phase involved containment, mitigation, and coordinated actions to prevent further compromise, while recovery focused on restoring systems to normal operation and learning from the incident to improve overall security posture. Overall, the BOTSv3 exercise reinforced the importance of a structured SOC approach, showing that clear tiered responsibilities and a coordinated incident lifecycle are essential for maintaining cybersecurity resilience.
 
 </div>
+
+# INSTALLATION & DATA PREPARATION
+<div  align="justify">
+Splunk Enterprise was installed using the official Splunk website to ensure software authenticity and security. An account was first created on the Splunk platform to enable access to licensed downloads. Then, Splunk Enterprise was downloaded and installed on a Windows-based system to simulate a SOC analyst workstation environment. During installation, an administrator account was configured to support secure access and accountability, which aligns with SOC operational practices. Successful installation was verified by accessing the Splunk web interface and confirming that the Splunk service was running correctly.
+<br/><br/>
+Additionally, the Splunk Universal Forwarder was downloaded and installed as a core SOC data collection component, allowing logs from endpoint and server systems to be securely forwarded to the central SIEM platform. 
+<br/><br/>
+After downloading the BOTSv3 dataset from the official Splunk GitHub repository (https://github.com/splunk/botsv3), the data was extracted and placed into the Splunk apps directory at (C:\Program Files\Splunk\etc\apps). Following extraction, the Splunk Enterprise service was restarted via the Server Controls panel. Dataset validation was then performed by executing test searches using “index=botsv3” to confirm that the data was successfully ingested. 
+<br/><br/>
+
+### JUSTIFICATION OF SETUP CHOICES
+1.	Splunk Enterprise Installation
+Installing Splunk Enterprise on a Windows-based system provides a stable and supported environment for a SOC analyst workstation. Splunk is widely used in industry SOCs for centralising and correlating security logs, making it ideal for monitoring, detecting, and investigating incidents. Using the official Splunk website ensures software authenticity and mitigates the risk of compromised or malicious software entering the SOC environment.
+2.	Administrator Account Configuration
+Creating and configuring an administrator account enforces access control and accountability, which are critical in a SOC. Only authorised personnel can modify configurations, create indexes, or ingest data, preventing unauthorised changes that could compromise security monitoring and incident analysis.
+3.	Universal Forwarder Installation
+The Universal Forwarder was installed to simulate real-world SOC architecture, where logs are collected from distributed endpoints and servers and securely forwarded to a central SIEM platform. This ensures all relevant data is aggregated for monitoring and correlation, reflecting standard SOC operations.
+4.	Dataset Placement and Ingestion
+Extracting the BOTSv3 dataset into the Splunk apps directory allows Splunk to automatically recognise it as an app, enabling indexing, source type assignment, and access to pre-configured dashboards. This mirrors SOC practices where structured, centralised log data is necessary for timely threat detection and investigation.
+5.	Service Restart and Validation
+Restarting Splunk after dataset placement ensures the platform fully recognises the app and ingested logs. Validation through test searches confirms that data is correctly indexed, timestamps are accurate, and fields are available for correlation. This step reflects SOC best practices, where verified and reliable data is essential for operational readiness and accurate incident response.
+</div>
