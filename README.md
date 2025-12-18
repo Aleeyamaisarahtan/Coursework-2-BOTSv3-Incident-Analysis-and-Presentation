@@ -292,3 +292,10 @@ The investigation of Frothly’s hybrid cloud and endpoint infrastructure throug
 
 Overall, the exercise demonstrates that a SOC’s effectiveness depends on integrating continuous monitoring, structured tiered analysis, and feedback loops, where Tier-3 forensic insights inform Tier-1 triage rules to strengthen detection, response, and proactive prevention.
 </div>
+
+<p align="center">
+<a href="https://youtu.be/kmvyvZ-0sCY" target="_blank">
+  <img src="https://img.youtube.com/vi/kmvyvZ-0sCY/0.jpg" alt="BOTSv3 Incident Analysis" width="560">
+</a>
+<p align="center">
+
