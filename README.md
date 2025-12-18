@@ -95,6 +95,10 @@ Restarting Splunk after dataset placement ensures the platform fully recognises 
 <b> ANSWER: </b> bstoll,btun,splunk_access,web_admin
 
 <b> QUERY: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 131513.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 • stats values(userIdentity.userName) AS user: Aggregates unique IAM usernames, eliminating duplicates.<br> 
 •	eval user=mvsort(user): Sorts usernames alphabetically.<br>
@@ -106,11 +110,21 @@ Identifies all IAM users who accessed AWS services in Frothly’s environment, g
 •	Unusual authentication or access attempts can highlight insider threats, brute-force attacks, or other malicious activities.<br>
 •	Maintaining a reliable record of IAM activity supports regulatory compliance and internal audits.<br>
 •	During Tier-1 triage, analysts verify whether IAM activity is normal, while Tier-2 analysis connects identity logs with other alerts to identify potential threats.<br>
-•	Regular monitoring helps enforce least-privilege policies and ensures timely detection of anomalies before they escalate into security incidents.<br><br>
+•	Regular monitoring helps enforce least-privilege policies and ensures timely detection of anomalies before they escalate into security incidents.<br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 232508.png" width="600">
+  <br>
+  <strong>Figure 9:</strong> IAM Users Accessing Aws Services
+</p>
+
 ### Q2- IDENTIFYING AWS API ACTIVITY WITHOUT MFA
 <b> ANSWER: </b>userIdentity.sessionContext.attributes.mfaAuthenticated
 
 <b> QUERY: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 132621.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 •	search additionalEventData.MFAUsed=* ORuserIdentity.sessionContext.attributes.mfaAuthenticated=*: Identifies events containing MFA usage information <br>
 •	userIdentity.sessionContext.attributes.mfaAuthenticated: Primary JSON field to alert on for API activity without MFA <br>
@@ -124,10 +138,20 @@ Monitoring API activity without MFA is critical for SOC operations. MFA adds an 
 •	Analysts can investigate privilege escalation attempts where users try to gain higher privileges than authorized.<br>
 •	During Tier-1 triage, SOC verifies whether API activity is normal, while Tier-2 analysis correlates MFA logs with other alerts to spot threats.<br>
 •	Regular monitoring supports proactive prevention and ensures timely response to potential security incidents.<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 234747.png" width="600">
+  <br>
+  <strong>Figure 10:</strong> Aws Api Activity Without MFA
+</p>
+
 ### Q3- PROCESSOR NUMBER USED ON THE WEB SERVERS
 <b> ANSWER: </b>E5-2676
 
 <b> QUERY: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 133301.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 •	sourcetype=hardware:  Retrieves host-level hardware information including processor-related<br><br> 
 <b> ANALYSIS: </b><br>
@@ -137,10 +161,20 @@ Returns hardware information for hosts within Frothly’s environment, including
 •	During Tier-2 analysis, SOC correlates processor information with other alerts to investigate potential anomalies or vulnerabilities.<br>
 •	Regular monitoring helps maintain asset visibility and supports effective incident response.<br>
 •	Provides context for investigations involving critical infrastructure, enabling SOC teams to prioritise actions based on the importance of the affected hosts.<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 133822.png" width="600">
+  <br>
+  <strong>Figure 11:</strong> Processor Number
+</p>
+
 ### Q4 - EVENT ID OF PUBLIC S3 BUCKET MISCONFIGURATION
 <b> ANSWER: </b>ab45689d-69cd-41e7-8705-5350402cf7ac
 
 <b> QUERY Q4-Q6: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 133913.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 •	eventName="PutBucketAcl":  Filters logs to S3 bucket ACL modification events.<br>
 •	sort _time: Orders the events from earliest to latest.<br>
@@ -153,6 +187,11 @@ Identifies the earliest occurrence of an S3 bucket ACL modification in Frothly�
 •	Assists Tier-1 triage in triaging alerts related to risky cloud storage activities<br>
 •	Allows Tier-2 analyst to correlate bucket permission changes with user identity and source IP for deeper investigation<br>
 •	Helps enforce cloud security best practices and compliance requirements by monitoring sensitive configuration changes<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-17 124202.png" width="600">
+  <br>
+  <strong>Figure 12:</strong>Event ID
+</p>
 ### Q5- BUD’S USERNAME
 <b> ANSWER: </b>stoll<br><br>
 <b> ANALYSIS: </b><br>
@@ -163,6 +202,12 @@ IAM user bstoll was identified as the account responsible for the S3 bucket ACL 
 •	Allows Tier-2 analysis to correlate user actions with other suspicious events for incident response<br>
 •	Strengthens accountability and auditing by linking cloud misconfigurations to specific identities<br>
 •	Facilitates enforcement of least-privilege policies and mitigation of potential data leaks<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 124711.png" width="600">
+  <br>
+  <strong>Figure 13:</strong>Bud's Username
+</p>
+
 ### Q6- NAME OF THE S3 BUCKET
 <b> ANSWER: </b>frothlywebcode<br><br>
 <b> ANALYSIS: </b><br>
@@ -173,10 +218,19 @@ S3 bucket frothlywebcode was identified as publicly accessible due to a misconfi
 •	Facilitates Tier-2 investigation by correlating the bucket exposure with other alerts and user activity<br>
 •	Strengthens auditing and compliance by documenting which resources were misconfigured and by whom<br>
 •	Helps enforce cloud security policies and minimize potential data exfiltration risk<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 153847.png" width="600">
+  <br>
+  <strong>Figure 14:</strong> S3 Bucket Name
+</p>
 ### Q7- UPLOADED TEXT FILE
 <b> ANSWER: </b>OPEN_BUCKET_PLEASE_FIX.txt
 
 <b> QUERY: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 134843.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 •	txt frothlywebcode: Filters logs containing the keywords txt and frothlywebcode<br>
 •	| sort _time: Sorts the results from the earliest to latest events<br><br>
@@ -187,10 +241,20 @@ Identifies the text file that was successfully uploaded to the frothlywebcode S3
 •	SOC analysts can investigate whether the upload was authorized or malicious.<br>
 •	Early identification of exposed data supports incident containment and remediation.<br>
 •	Monitoring such activity aligns with SOC responsibilities for detection, prevention, and rapid response.<br><br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 130043.png" width="600">
+  <br>
+  <strong>Figure 16:</strong> Upload Text File
+</p>
+
 ### Q8- Unique Windows Endpoint
 <b> ANSWER: </b>BSTOLL-L.froth.ly
 
 <b> QUERY: </b>   <br>
+<p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 140247.png" width="600">
+  <br>
+</p>
 <b> QUERY EXPLANATION: </b> <br>
 •	sourcetype=WinEventLog:Security: Filters logs to Windows Security Event Logs<br>
 •	rex field=_raw "Account Name:\s+(?<AccountName>[^\r\n]+)": Extracts the account names from the raw event data<br>
@@ -203,6 +267,13 @@ Identifies all user accounts that have interacted with each Windows endpoint in 
 •	Supports incident triage by highlighting endpoints that may require further investigation due to abnormal user activity.<br>
 •	Helps enforce least-privilege access policies and ensures proper visibility for detection and response.<br>
 •	Aggregating account information aids in compliance and auditing by providing a clear record of user access per host.<br>
+  <p align="center">
+   <img src="PICTURE/Screenshot 2025-12-18 140728.png" width="600">
+  <br> 
+    <img src="PICTURE/Screenshot 2025-12-18 140746.png" width="600">
+  <br>
+  <strong>Figure 16:</strong> Windows Endpoint
+</p>
 </div>
 
 # CONCLUSION
