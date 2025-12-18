@@ -203,5 +203,21 @@ Identifies all user accounts that have interacted with each Windows endpoint in 
 •	Supports incident triage by highlighting endpoints that may require further investigation due to abnormal user activity.<br>
 •	Helps enforce least-privilege access policies and ensures proper visibility for detection and response.<br>
 •	Aggregating account information aids in compliance and auditing by providing a clear record of user access per host.<br>
+</div>
 
+# CONCLUSION
+<div align="justify">
+The investigation of Frothly’s hybrid cloud and endpoint infrastructure through the BOTSv3 dataset highlights the importance of a telemetry-driven, structured SOC approach. Across Questions 1–8, a comprehensive analysis was conducted: monitoring IAM users and API activity to detect non-MFA access, identifying the event ID and responsible IAM user for public S3 bucket misconfigurations, determining the names of exposed buckets and files, retrieving processor numbers for web servers, and identifying endpoints running differing OS editions. These activities demonstrate the value of correlating cloud-level events with host-level telemetry, such as hardware and OS profiles, for full visibility into potential security risks.<br><br>
+  
+### KEY FINDINGS: 
+•	Detecting API activity without MFA revealed critical gaps in identity security, allowing SOC analysts to identify potential account compromises.<br>
+•	Publicly accessible S3 buckets were traced to specific IAM users, emphasizing misconfigurations as a major vector for data exposure.<br>
+• Host-level analysis of processors and OS editions established asset baselines, enabling detection of anomalous hardware or software configurations.<br>
+
+### SOC STRATEGY IMPLICATIONS:
+•	Correlating cloud and host logs improve detection efficiency and reduces the mean time to detect (MTTD). <br>
+•	Continuous monitoring of hardware and operating system configurations ensures prompt identification of deviations or unauthorized changes.<br>
+•	Enforcing MFA and secure S3 configurations reduces attack surfaces and prevents misconfigurations.<br>
+
+Overall, the exercise demonstrates that a SOC’s effectiveness depends on integrating continuous monitoring, structured tiered analysis, and feedback loops, where Tier-3 forensic insights inform Tier-1 triage rules to strengthen detection, response, and proactive prevention.
 </div>
