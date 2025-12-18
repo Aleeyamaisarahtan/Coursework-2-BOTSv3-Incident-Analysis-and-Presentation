@@ -162,7 +162,7 @@ Returns hardware information for hosts within Frothly’s environment, including
 •	Regular monitoring helps maintain asset visibility and supports effective incident response.<br>
 •	Provides context for investigations involving critical infrastructure, enabling SOC teams to prioritise actions based on the importance of the affected hosts.<br><br>
 <p align="center">
-   <img src="PICTURE/Screenshot 2025-12-18 133822.png" width="600">
+   <img src="PICTURE/Screenshot 2025-12-18 123016.png" width="600">
   <br>
   <strong>Figure 11:</strong> Processor Number
 </p>
@@ -188,7 +188,7 @@ Identifies the earliest occurrence of an S3 bucket ACL modification in Frothly�
 •	Allows Tier-2 analyst to correlate bucket permission changes with user identity and source IP for deeper investigation<br>
 •	Helps enforce cloud security best practices and compliance requirements by monitoring sensitive configuration changes<br><br>
 <p align="center">
-   <img src="PICTURE/Screenshot 2025-12-17 124202.png" width="600">
+   <img src="PICTURE/Screenshot 2025-12-18 124202.png" width="600">
   <br>
   <strong>Figure 12:</strong>Event ID
 </p>
@@ -244,7 +244,7 @@ Identifies the text file that was successfully uploaded to the frothlywebcode S3
 <p align="center">
    <img src="PICTURE/Screenshot 2025-12-18 130043.png" width="600">
   <br>
-  <strong>Figure 16:</strong> Upload Text File
+  <strong>Figure 15:</strong> Upload Text File
 </p>
 
 ### Q8- Unique Windows Endpoint
