@@ -296,6 +296,6 @@ Overall, the exercise demonstrates that a SOC’s effectiveness depends on integ
 <p align="center">
 <a href="https://youtu.be/kmvyvZ-0sCY" target="_blank">
   <img src="https://img.youtube.com/vi/kmvyvZ-0sCY/0.jpg" alt="BOTSv3 Incident Analysis" width="560">
-</a>
+</a><br>
+  <strong>(https://youtu.be/kmvyvZ-0sCY)</strong>
 <p align="center">
-
