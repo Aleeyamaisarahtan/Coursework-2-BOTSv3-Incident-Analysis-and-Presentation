@@ -2,11 +2,23 @@
 
 # INTRODUCTION
 <div align="justify">
-A Security Operations Center (SOC) is the core organizational function responsible for continuously monitoring, assessing, and improving an enterprise's security posture. Its primary purpose is to prevent, detect, analyze, and respond to cybersecurity threats. SOCs rely on a combination of specialized roles, well-defined processes, and technical infrastructures—such as Security Information and Event Management (SIEM) systems, intrusion detection tools, and threat intelligence platforms—to enable situational awareness and incident management. The ultimate goal is to minimize organizational risk by converting raw log data into actionable intelligence on potential intrusions. From the perspective of a security analyst within a SOC, these activities involve applying systematic intrusion analysis methodologies to identify, investigate, and mitigate threats effectively.  
+A Security Operations Center (SOC) is a central unit responsible for continuously monitoring, analyzing, and improving an organization’s cybersecurity posture. Its main purpose is to prevent, detect, investigate, and respond to threats by transforming raw log data into actionable intelligence. SOC operations rely on specialized roles, structured processes, and technical tools such as Security Information and Event Management (SIEM) systems, intrusion detection platforms, and threat intelligence feeds to maintain situational awareness and manage security incidents effectively. This investigation mimics the lifecycle of an incident, progressing from initial cloud-based anomalies to granular host-level forensic analysis.
 <br/><br/>
-The Boss of the SOC (BOTSv3) dataset is a publicly available, pre-indexed security dataset and Capture The Flag (CTF) platform created by Splunk. It is designed to train and test the skills of cybersecurity professionals, students, and enthusiasts in security analysis. The platform simulates a realistic security incident within a fictitious brewing company named "Frothly," providing a massive collection of logs from network, endpoint, email, and cloud service environments such as Amazon AWS and Microsoft Azure. Users must use Splunk's Search Processing Language (SPL) to analyze the data, identify anomalies, investigate the simulated attack, and practice real-world security response techniques.
-<br/><br/>
-The objective of this investigation is to utilize Splunk’s SPL on the BOTSv3 data sources, primarily focusing on aws:cloudtrail, aws:s3:accesslogs, and winhostmon, to systematically identify the initial stages of a breach targeting both AWS cloud infrastructure and a key endpoint asset. The investigation begins with a reconnaissance phase, aiming to identify legitimate IAM users accessing the AWS environment and determine the specific API activity field that can be used to alert on non-MFA (Multi-Factor Authentication) access, thereby highlighting a critical security weakness. Next, the investigation reconstructs a security incident involving AWS misconfiguration and potential data exfiltration. This involves identifying the event ID of the API call that publicly exposed an S3 bucket, determining the IAM user (“Bud”) responsible for the misconfiguration, and identifying the name of the S3 bucket and the text file uploaded to the publicly accessible bucket, suggesting unauthorized data staging or exfiltration. Lastly, the investigation seeks to characterize the internal environment using host monitoring data. This includes identifying the processor number used on the web servers and pinpointing the Fully Qualified Domain Name (FQDN) of the endpoint running a distinct Windows operating system edition, which could indicate a unique or vulnerable target host.
+The Boss of the SOC (BOTSv3) dataset, created by Splunk, simulates a realistic security environment for training purposes. It focuses on a fictional brewing company, Frothly, and includes logs from network, endpoint, email, and cloud services such as AWS and Microsoft Azure. The dataset allows users to practice detecting anomalies, investigating incidents, and responding to threats using Splunk’s Search Processing Language (SPL).
+
+### OBJECTIVES:
+•	Identify legitimate IAM users accessing AWS services. <br/>
+•	Detect API activity performed without Multi-Factor Authentication (MFA). <br/>
+•	Analyze S3 bucket misconfigurations and identify responsible IAM users.<br/>
+•	Determine the names of publicly accessible buckets and uploaded files.<br/>
+•	Establish an asset inventory baseline to identify hardware configurations and detect OS version discrepancies (drift)<br/>
+
+### SCOPE AND ASSUMPTIONS:
+•	Focus on AWS cloud infrastructure and internal endpoints. <br/>
+•	Logs are assumed accurate and reflective of SOC monitoring scenarios.<br/>
+•	Analysis is limited to the BOTSv3 dataset; no real-world systems are affected.<br/>
+•	Investigation demonstrates detection, analysis, and SOC-relevant response techniques.<br/>
+
 </div> 
 
 # SOC ROLES & INCIDENT HANDLING REFLECTION
